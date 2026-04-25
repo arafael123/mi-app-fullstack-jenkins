@@ -3,7 +3,6 @@ pipeline {
 
     stages {
 
-    
         stage('Instalar dependencias') {
             steps {
                 bat 'pip install -r requirements.txt'
@@ -13,12 +12,6 @@ pipeline {
         stage('Pruebas') {
             steps {
                 bat 'pytest'
-            }
-        }
-
-        stage('Run App') {
-            steps {
-                bat 'python app.py'
             }
         }
     }
